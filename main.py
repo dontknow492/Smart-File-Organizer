@@ -10,7 +10,8 @@ from qfluentwidgets import (
 import json
 from typing import List, Dict
 from loguru import logger
-from components.add_category_dialog import AddCategory
+from components.add_category_dialog import AddCategoryDialog
+from components.option_dialog import OptionDialog
 from interface.log_interface import LogBrowser
 
 
@@ -86,7 +87,8 @@ class SFOWindow(FluentWindow):
 
         self._init_options()
 
-        self.add_category_dialog = AddCategory(self)
+        self.add_category_dialog = AddCategoryDialog(self)
+        self.option_dialog = OptionDialog(self)
         self.log_browser = LogBrowser(self)
         self.stackedWidget.addWidget(self.log_browser)
 
@@ -130,6 +132,10 @@ class SFOWindow(FluentWindow):
 
     def on_setting_clicked(self):
         logger.debug("Settings clicked")
+        if self.option_dialog.exec():
+            logger.info("Settings applied")
+        else:
+            logger.info("Settings cancelled")
 
     def on_log_clicked(self):
         self.switchTo(self.log_browser)

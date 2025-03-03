@@ -4,7 +4,7 @@ from qfluentwidgets import LineEdit, TextEdit, MessageBoxBase, SubtitleLabel
 from PySide6.QtWidgets import QApplication, QWidget, QVBoxLayout, QFrame
 
 
-class AddCategory(MessageBoxBase):
+class AddCategoryDialog(MessageBoxBase):
     def __init__(self, parent = None):
         super().__init__(parent = parent)
         self.extension_edit = None # text edit
@@ -46,6 +46,6 @@ class AddCategory(MessageBoxBase):
 if __name__ == '__main__':
     app = QApplication([])
     frame = QFrame()
-    w = AddCategory(frame)
+    w = AddCategoryDialog(frame)
     frame.show()
     app.exec()

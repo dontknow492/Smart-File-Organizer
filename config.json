@@ -1,0 +1,17 @@
+{
+    "categories": [
+        {
+            "name": "Documents",
+            "extensions": [".pdf", ".docx", ".txt"]
+        },
+        {
+            "name": "Images",
+            "extensions": [".jpg", ".png", ".gif"]
+        },
+        {
+            "name": "Videos",
+            "extensions": [".mp4", ".mkv", ".avi"]
+        }
+    ],
+    "columns": ["name", "size", "type", "data_added", "category", "description", "path"]
+}

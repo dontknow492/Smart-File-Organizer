@@ -23,6 +23,14 @@ def open_in_web(url):
     if url:
         QDesktopServices.openUrl(QUrl(url))
 
+def open_git_page():
+    url = "https://github.com/dontknow492/Smart-File-Organizer"
+    open_in_web(url)
+
+def open_help_page():
+    url = "https://github.com/dontknow492/Smart-File-Organizer"
+    open_in_web(url)
+
 
 class SFOTable(TableWidget):
     def __init__(self, columns: List[str], parent=None):
@@ -90,8 +98,8 @@ class SFOWindow(FluentWindow):
         add_scan_dir_btn = self._create_option(FluentIcon.FOLDER_ADD, self.add_scan_folder, "Add Scan Directory")
         settings_btn = self._create_option(FluentIcon.SETTING, self.on_setting_clicked, "Settings")
         log_btn = self._create_option(FluentIcon.HISTORY, self.on_log_clicked, "Log")
-        help_btn = self._create_option(FluentIcon.HELP, self.on_log_clicked, "Help")
-        git_redirect_btn = self._create_option(FluentIcon.GITHUB, self.on_log_clicked, "GitHub")
+        help_btn = self._create_option(FluentIcon.HELP, open_help_page, "Help")
+        git_redirect_btn = self._create_option(FluentIcon.GITHUB, open_git_page, "GitHub")
 
         spacer = QSpacerItem(20, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
